@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "gen:ui": "generate-react component %npm_config_name% --flat",
-    "gen:section": "generate-react component %npm_config_name% --flat --type=section",
-    "gen:layout": "generate-react component %npm_config_name% --flat --type=layout"
+    "gen:ui": "generate-react component --flat",
+    "gen:section": "generate-react component --flat --type=section",
+    "gen:layout": "generate-react component --flat --type=layout"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

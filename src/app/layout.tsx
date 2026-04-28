@@ -37,6 +37,7 @@ export default function RootLayout(props: RootLayoutProps) {
     <>
       <ReactLenis root options={{ anchors: true }} />
       <Cursor />
+
       <html
         lang="ru"
         className={cn(
@@ -45,7 +46,7 @@ export default function RootLayout(props: RootLayoutProps) {
           geistMono.variable
         )}
       >
-        <body className={cn("min-h-dvh flex flex-col overflow-x-hidden", dotsBackgroundStyles)}>
+        <body className={cn("min-h-dvh flex flex-col", dotsBackgroundStyles)}>
           <Navigation />
 
           <main>{children}</main>
