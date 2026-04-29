@@ -30,6 +30,8 @@ body {
 
   --font-eesti: var(--font-eesti), "sans-serif";
   --font-roboto: var(--font-roboto), "sans-serif";
+
+  --breakpoint-xs: 30rem;
 }
 
 @utility dots-background {

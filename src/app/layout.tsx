@@ -1,21 +1,12 @@
+"use client";
+
 import ReactLenis from "lenis/react";
 import "./globals.css";
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ReactNode } from "react";
 import { Navigation } from "~/components/ui/navigation";
 import { cn } from "~/utils/cn";
 import { Cursor } from "~/components/layout/cursor";
-
-export const metadata: Metadata = {
-  title: "Lorem Ipsum Dolor",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-};
-
-export interface RootLayoutProps {
-  children: ReactNode;
-}
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +18,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function RootLayout(props: RootLayoutProps) {
+export default function RootLayout(props: { children: ReactNode }) {
   const { children } = props;
 
   const dotsBackgroundStyles =

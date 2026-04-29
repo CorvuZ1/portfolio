@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { experience } from "~/data/experience";
 import { Container } from "../ui/container";
-import { TextAnimation } from "../animations/text";
+import { AnimationRoot } from "../ui/animation-root";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -76,19 +76,24 @@ export const ExperienceSection = () => {
     <section ref={sectionRef} id="experience" className="relative overflow-hidden scroll-mt-5">
       <Container className="py-24">
         <div className="relative">
-          <div className="mb-16 max-w-3xl space-y-4">
-            <TextAnimation>
-              <p className="text-sm uppercase tracking-[0.34em] text-cyan-200/75">Lorem ipsum</p>
+          <AnimationRoot>
+            <div className="mb-16 max-w-3xl space-y-4">
+              <p
+                data-animation-item
+                className="text-sm uppercase tracking-[0.34em] text-cyan-200/75"
+              >
+                Lorem ipsum
+              </p>
 
-              <h2 className="text-4xl font-semibold text-white sm:text-5xl">
+              <h2 data-animation-item className="text-4xl font-semibold text-white sm:text-5xl">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
               </h2>
-              <p className="text-lg leading-8 text-slate-300">
+              <p data-animation-item className="text-lg leading-8 text-slate-300">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua.
               </p>
-            </TextAnimation>
-          </div>
+            </div>
+          </AnimationRoot>
 
           <div ref={containerRef} className="relative  overflow-visible">
             <div
