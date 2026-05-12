@@ -40,6 +40,15 @@ export const Model = (props: ModelProps) => {
           color="#9ab7fc"
         />
       </mesh>
+      <mesh geometry={(nodes.blade as Mesh).geometry}>
+        <meshStandardMaterial
+          attach="material"
+          depthWrite={false}
+          emissiveIntensity={0}
+          transparent
+          opacity={0}
+        />
+      </mesh>
 
       <group ref={handleRef} rotation={[0, -9, 0]}>
         <mesh

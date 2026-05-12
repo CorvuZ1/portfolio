@@ -100,9 +100,9 @@ export const useModelAnimation = () => {
       y: 1,
       immediateRender: false,
       scrollTrigger: {
-        trigger: ".model-spacer",
+        trigger: isLargeOrMore ? "#contacts" : ".model-space",
         start: "bottom bottom",
-        end: isLargeOrMore ? "+=1300" : "+=1000",
+        end: "+=1000",
         scrub: true,
         pin: true,
       },

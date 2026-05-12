@@ -11,7 +11,8 @@ export const MainView = () => {
       <AboutSection />
       <ExperienceSection />
       <ContactsSection />
-      <div className="model-spacer"></div>
+
+      <div className="model-space" />
     </>
   );
 };
