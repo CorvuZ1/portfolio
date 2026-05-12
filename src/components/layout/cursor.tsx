@@ -40,7 +40,9 @@ export const Cursor = () => {
         scale: 1.2,
       });
 
-      window.addEventListener("mousemove", (e) => {
+      window.addEventListener("pointermove", (e) => {
+        if (e.pointerType !== "mouse") return;
+
         if (!isMouseMoved) setIsMouseMoved(true);
 
         xFollowerTo(e.clientX);

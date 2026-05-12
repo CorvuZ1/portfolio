@@ -3,10 +3,13 @@ import { Container } from "../ui/container";
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="min-h-dvh flex scroll-mt-5 items-center pb-16 pt-36 sm:pt-32">
+    <section
+      id="about"
+      className="min-h-dvh flex scroll-mt-5 items-center pb-16 pt-36 sm:pt-32 text-contrast-shadow"
+    >
       <AnimationRoot>
-        <Container className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:gap-10">
-          <div className="space-y-8">
+        <Container>
+          <div className="space-y-8 lg:max-w-2/3">
             <div className="space-y-5">
               <p
                 data-animation-item
@@ -50,7 +53,7 @@ export const AboutSection = () => {
                 data-animation-item
                 data-animation-item-block
                 href="#experience"
-                className="rounded-full bg-cyan-300 px-6 py-3 text-center font-semibold 200 transition-colors text-slate-950 hover:bg-cyan-200"
+                className="rounded-full bg-cyan-300 px-6 py-3 text-center font-semibold 200 transition-colors text-slate-950 hover:bg-cyan-200 text-shadow-none"
               >
                 Lorem ipsum
               </a>
@@ -64,9 +67,6 @@ export const AboutSection = () => {
               </a>
             </div>
           </div>
-          <p className="text-white" data-animation-item>
-            Right block
-          </p>
         </Container>
       </AnimationRoot>
     </section>

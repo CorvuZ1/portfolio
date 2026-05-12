@@ -23,11 +23,8 @@ export const ExperienceSection = () => {
       if (!cardsWrapper || !container) return;
 
       const cards = gsap.utils.toArray<HTMLElement>(cardsWrapper.children);
-      const totalCards = cards.length;
 
-      const cardWidth = cardsWrapper.scrollWidth / totalCards;
-
-      const scrollWidth = cardWidth * (totalCards - 1);
+      const scrollWidth = cardsWrapper.scrollWidth - container.offsetWidth;
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -45,7 +42,7 @@ export const ExperienceSection = () => {
         ease: "none",
       });
 
-      cards.forEach((card, index) => {
+      cards.forEach((card) => {
         gsap.fromTo(
           card,
           {
@@ -73,7 +70,11 @@ export const ExperienceSection = () => {
   );
 
   return (
-    <section ref={sectionRef} id="experience" className="relative overflow-hidden scroll-mt-5">
+    <section
+      ref={sectionRef}
+      id="experience"
+      className="relative overflow-hidden scroll-mt-5 text-contrast-shadow"
+    >
       <Container className="py-24">
         <div className="relative">
           <AnimationRoot>
@@ -98,7 +99,7 @@ export const ExperienceSection = () => {
           <div ref={containerRef} className="relative  overflow-visible">
             <div
               ref={cardsWrapperRef}
-              className="flex gap-8"
+              className="flex gap-8 will-change-transform"
               style={{
                 width: `${experience.length * 100}%`,
               }}

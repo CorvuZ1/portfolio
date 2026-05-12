@@ -31,7 +31,7 @@ export const SideNavigation = (props: SideNavigationProps) => {
               key={index}
               href={`#${section.id}`}
               aria-current={isActive ? "location" : undefined}
-              className={`pointer-events-auto group flex items-center gap-3 rounded-full px-3 py-2 text-left transition ${
+              className={`pointer-events-auto group flex items-center gap-3 rounded-full px-3 py-3 text-left transition ${
                 isActive
                   ? "bg-white/10 text-white"
                   : "text-slate-300 hover:bg-white/6 hover:text-white"
@@ -44,9 +44,6 @@ export const SideNavigation = (props: SideNavigationProps) => {
                 )}
               />
               <span className="flex flex-col">
-                <span className="text-[0.62rem] uppercase tracking-[0.32em] text-slate-400">
-                  {index + 1}
-                </span>
                 <span className="text-xs font-medium">{section.label}</span>
               </span>
             </a>

@@ -4,7 +4,10 @@ import { AnimationRoot } from "../ui/animation-root";
 
 export const ContactsSection = () => {
   return (
-    <section id="contacts" className="min-h-dvh flex scroll-mt-5 items-center px-4 py-20 md:px-6">
+    <section
+      id="contacts"
+      className="min-h-dvh flex scroll-mt-5 items-center px-4 py-20 md:px-6 text-contrast-shadow"
+    >
       <AnimationRoot>
         <Container className="grid gap-8 lg:items-center lg:grid-cols-[0.95fr_1.05fr]">
           <div className="space-y-5">
@@ -17,7 +20,7 @@ export const ContactsSection = () => {
             >
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
             </h2>
-            <p data-animation-item className="max-w-2xl text-lg leading-8 text-slate-300">
+            <p data-animation-item className="max-w-2xl text-lg leading-8 text-slate-300 ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua.
             </p>

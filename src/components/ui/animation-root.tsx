@@ -33,7 +33,7 @@ export const AnimationRoot = (props: AnimationRoot) => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: root,
-        start: "top 95%",
+        start: "top 99%",
         toggleActions: "play none none reverse",
       },
     });
@@ -51,8 +51,8 @@ export const AnimationRoot = (props: AnimationRoot) => {
           {
             y: 0,
             opacity: 1,
-            ease: "bounce.out",
-            duration: 0.6,
+            ease: "back.out",
+            duration: 0.4,
           }
         );
         return;
