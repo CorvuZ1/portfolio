@@ -78,7 +78,7 @@ export const useModelAnimation = () => {
       modelRef.current.position,
       {
         y: 0,
-        x: -4.5,
+        x: -4,
         duration: 1,
       },
       1
