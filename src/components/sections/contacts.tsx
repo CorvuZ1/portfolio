@@ -6,7 +6,7 @@ export const ContactsSection = () => {
   return (
     <section
       id="contacts"
-      className="min-h-dvh flex scroll-mt-5 items-center px-4 py-20 md:px-6 text-contrast-shadow"
+      className="min-h-screen flex scroll-mt-5 items-center px-4 py-20 md:px-6 text-contrast-shadow"
     >
       <AnimationRoot>
         <Container className="grid gap-8 lg:items-center lg:grid-cols-[0.95fr_1.05fr]">

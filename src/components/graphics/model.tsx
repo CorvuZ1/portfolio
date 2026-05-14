@@ -53,6 +53,7 @@ export const Model = (props: ModelProps) => {
       <EffectComposer>
         <SelectiveBloom
           selection={bladeRef as RefObject<Mesh>}
+          lights={[]}
           luminanceThreshold={0.1}
           luminanceSmoothing={0.9}
           intensity={2}

@@ -106,11 +106,13 @@ export const useModelAnimation = () => {
           end: "+=1000",
           scrub: true,
           pin: true,
+          pinSpacing: true,
         },
       });
     },
     {
       dependencies: [isLargeOrMore],
+      revertOnUpdate: true,
     }
   );
 

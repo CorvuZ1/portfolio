@@ -25,7 +25,7 @@ export default function RootLayout(props: { children: ReactNode }) {
           scienceGothic.variable
         )}
       >
-        <body className={cn("min-h-dvh flex flex-col", dotsBackgroundStyles)}>
+        <body className={cn("min-h-screen flex flex-col overflow-x-hidden", dotsBackgroundStyles)}>
           <Navigation />
           <main>{children}</main>
         </body>

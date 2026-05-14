@@ -5,7 +5,7 @@ export const AboutSection = () => {
   return (
     <section
       id="about"
-      className="min-h-dvh flex scroll-mt-5 items-center pb-16 pt-36 sm:pt-32 text-contrast-shadow"
+      className="min-h-screen flex scroll-mt-5 items-center pb-16 pt-36 sm:pt-32 text-contrast-shadow"
     >
       <AnimationRoot>
         <Container>
