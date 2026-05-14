@@ -14,7 +14,7 @@ export const SideNavigation = (props: SideNavigationProps) => {
     <aside
       data-component="side-navigation"
       className={cn(
-        "pointer-events-none fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 transition duration-300 2xl:flex",
+        "fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 transition duration-300 2xl:flex",
         className
       )}
       {...rest}

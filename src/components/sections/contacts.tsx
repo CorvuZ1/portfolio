@@ -53,7 +53,7 @@ export const ContactsSection = () => {
             <div
               data-animation-item
               data-animation-item-block
-              className="rounded-[1.75rem] border border-amber-300/20 bg-[linear-gradient(135deg,_rgba(247,146,30,0.18),_rgba(10,15,24,0.55))] p-6"
+              className="rounded-[1.75rem] border border-amber-300/20 bg-[linear-gradient(135deg,_rgba(247,146,30,0.18),_rgba(10,15,24,0.55))] p-6 backdrop-blur-xl"
             >
               <p className="text-xs uppercase tracking-[0.3em] text-amber-100/80">Amet elit</p>
               <p className="mt-4 max-w-xl text-base leading-7 text-slate-100">

@@ -4,7 +4,7 @@ export interface SectionItem {
 }
 
 export const sections: SectionItem[] = [
-  { id: "about", label: "Обо мне" },
-  { id: "experience", label: "Места работы" },
-  { id: "contacts", label: "Контакты" },
+  { id: "about", label: "Lorem ipsum" },
+  { id: "experience", label: "Lorem ipsum" },
+  { id: "contacts", label: "Lorem ipsum" },
 ];
