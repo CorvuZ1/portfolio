@@ -2,7 +2,14 @@
 
 import React, { useEffect, useRef } from "react";
 
-import { Bounds, Center, Float, OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import {
+  Bounds,
+  Center,
+  Float,
+  OrbitControls,
+  PerspectiveCamera,
+  useProgress,
+} from "@react-three/drei";
 import { Canvas, useThree } from "@react-three/fiber";
 import { Model } from "./model";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
@@ -14,34 +21,21 @@ import { useScreenWidth } from "~/hooks/useScreenWidth";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export interface SceneProps {
-  className?: string;
-}
-
-const Scene = (props: SceneProps) => {
-  const { className } = props;
+const Scene = () => {
   const { isXLargeOrMore } = useScreenWidth();
 
-  const view = (
-    <Float floatIntensity={0.1} speed={0.5}>
-      <Center>
-        <Model />
-      </Center>
-    </Float>
-  );
-
   return (
-    <Canvas className={className} shadows>
+    <Canvas>
       <ambientLight intensity={1.5} />
       <directionalLight position={[5, 5, 5]} intensity={1} />
 
-      {isXLargeOrMore ? (
-        view
-      ) : (
-        <Bounds fit clip observe margin={1}>
-          {view}
-        </Bounds>
-      )}
+      <Bounds fit={!isXLargeOrMore} clip={!isXLargeOrMore} observe={!isXLargeOrMore} margin={1}>
+        <Float floatIntensity={0.2} speed={0.5}>
+          <Center>
+            <Model />
+          </Center>
+        </Float>
+      </Bounds>
     </Canvas>
   );
 };

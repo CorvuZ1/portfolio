@@ -12,7 +12,7 @@ export const MainView = () => {
       <ExperienceSection />
       <ContactsSection />
 
-      <div className="model-space" />
+      <div className="model-pin" />
     </>
   );
 };

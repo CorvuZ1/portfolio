@@ -1,20 +1,10 @@
 import ReactLenis from "lenis/react";
 import "./globals.css";
-import { Geist, Geist_Mono } from "next/font/google";
 import { ReactNode } from "react";
 import { Navigation } from "~/components/ui/navigation";
 import { cn } from "~/utils/cn";
 import { Cursor } from "~/components/layout/cursor";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { exo2, scienceGothic } from "~/config/fonts";
 
 export default function RootLayout(props: { children: ReactNode }) {
   const { children } = props;
@@ -31,8 +21,8 @@ export default function RootLayout(props: { children: ReactNode }) {
         lang="ru"
         className={cn(
           "h-full antialiased overflow-x-hidden bg-app-background selection:bg-selection-background",
-          geistSans.variable,
-          geistMono.variable
+          exo2.variable,
+          scienceGothic.variable
         )}
       >
         <body className={cn("min-h-dvh flex flex-col", dotsBackgroundStyles)}>

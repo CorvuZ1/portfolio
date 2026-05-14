@@ -20,7 +20,7 @@ export const SideNavigation = (props: SideNavigationProps) => {
       {...rest}
     >
       <nav
-        aria-label={ariaLabel ?? "Lorem ipsum navigation"}
+        aria-label={ariaLabel || "Lorem ipsum navigation"}
         className="flex flex-col gap-3 rounded-4xl border border-white/10 bg-slate-950/60 px-3 py-4 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur-xl"
       >
         {sections.map((section, index) => {

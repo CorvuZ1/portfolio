@@ -19,7 +19,7 @@ export const AboutSection = () => {
               </p>
               <h1
                 data-animation-item
-                className="max-w-4xl text-4xl font-semibold leading-[0.95] text-white sm:text-6xl lg:text-7xl"
+                className="max-w-4xl text-4xl font-medium leading-[0.95] text-white sm:text-6xl lg:text-7xl font-science-gothic"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </h1>

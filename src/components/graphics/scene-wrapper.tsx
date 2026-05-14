@@ -2,6 +2,8 @@
 
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
+import { Canvas } from "@react-three/fiber";
+import { useGLTF } from "@react-three/drei";
 
 const DynamicScene = dynamic(() => import("./scene"), {
   ssr: false,

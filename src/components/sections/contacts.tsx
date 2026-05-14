@@ -20,7 +20,7 @@ export const ContactsSection = () => {
             >
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
             </h2>
-            <p data-animation-item className="max-w-2xl text-lg leading-8 text-slate-300 ">
+            <p data-animation-item className="max-w-2xl text-lg leading-8 text-slate-300">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua.
             </p>

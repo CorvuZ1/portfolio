@@ -14,100 +14,105 @@ export const useModelAnimation = () => {
   const handleRef = useRef<Mesh>(null);
   const { isLargeOrMore } = useScreenWidth();
 
-  useGSAP(() => {
-    if (!bladeRef.current || !handleRef.current || !modelRef.current) return;
+  useGSAP(
+    () => {
+      if (!bladeRef.current || !handleRef.current || !modelRef.current) return;
 
-    const flicker = () => {
-      gsap.to(bladeRef.current!.material, {
-        emissiveIntensity: gsap.utils.random(2.8, 3.2),
-        duration: gsap.utils.random(0.02, 0.1),
-        onComplete: flicker,
+      const flicker = () => {
+        gsap.to(bladeRef.current!.material, {
+          emissiveIntensity: gsap.utils.random(2.8, 3.2),
+          duration: gsap.utils.random(0.02, 0.1),
+          onComplete: flicker,
+        });
+      };
+
+      flicker();
+
+      gsap.to(handleRef.current.rotation, {
+        y: 10,
+        scrollTrigger: {
+          trigger: "body",
+          scrub: true,
+        },
       });
-    };
 
-    flicker();
+      const masterTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      });
 
-    gsap.to(handleRef.current.rotation, {
-      y: 10,
-      scrollTrigger: {
-        trigger: "body",
-        scrub: true,
-      },
-    });
+      masterTl.to(bladeRef.current.scale, { y: 0.01, duration: 1 }, 0);
 
-    const masterTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "body",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true,
-      },
-    });
-
-    masterTl.to(bladeRef.current.scale, { y: 0.01, duration: 1 }, 0);
-
-    masterTl.to(
-      modelRef.current.rotation,
-      {
-        z: MathUtils.degToRad(110),
-        duration: 1,
-      },
-      0
-    );
-
-    masterTl.to(
-      modelRef.current.position,
-      {
-        y: 5,
-        x: 1,
-        duration: 1,
-      },
-      0
-    );
-
-    masterTl.to(
-      modelRef.current.rotation,
-      {
-        z: MathUtils.degToRad(-10),
-        duration: 1,
-      },
-      1
-    );
-
-    masterTl.to(
-      modelRef.current.position,
-      {
-        y: 0,
-        x: -4,
-        duration: 1,
-      },
-      1
-    );
-
-    isLargeOrMore &&
       masterTl.to(
-        modelRef.current.scale,
+        modelRef.current.rotation,
         {
-          x: 6,
-          y: 6,
-          z: 6,
+          z: MathUtils.degToRad(110),
+          duration: 1,
+        },
+        0
+      );
+
+      masterTl.to(
+        modelRef.current.position,
+        {
+          y: 5,
+          x: 1,
+          duration: 1,
+        },
+        0
+      );
+
+      masterTl.to(
+        modelRef.current.rotation,
+        {
+          z: MathUtils.degToRad(-10),
           duration: 1,
         },
         1
       );
 
-    gsap.to(bladeRef.current.scale, {
-      y: 1,
-      immediateRender: false,
-      scrollTrigger: {
-        trigger: isLargeOrMore ? "#contacts" : ".model-space",
-        start: "bottom bottom",
-        end: "+=1000",
-        scrub: true,
-        pin: true,
-      },
-    });
-  });
+      masterTl.to(
+        modelRef.current.position,
+        {
+          y: 0,
+          x: -4,
+          duration: 1,
+        },
+        1
+      );
+
+      isLargeOrMore &&
+        masterTl.to(
+          modelRef.current.scale,
+          {
+            x: 6,
+            y: 6,
+            z: 6,
+            duration: 1,
+          },
+          1
+        );
+
+      gsap.to(bladeRef.current.scale, {
+        y: 1,
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: isLargeOrMore ? "#contacts" : ".model-pin",
+          start: "bottom bottom",
+          end: "+=1000",
+          scrub: true,
+          pin: true,
+        },
+      });
+    },
+    {
+      dependencies: [isLargeOrMore],
+    }
+  );
 
   return {
     modelRef,
