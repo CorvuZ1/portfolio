@@ -27,7 +27,6 @@ export default function RootLayout(props: { children: ReactNode }) {
       >
         <body className={cn("min-h-dvh flex flex-col", dotsBackgroundStyles)}>
           <Navigation />
-
           <main>{children}</main>
         </body>
       </html>
