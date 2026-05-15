@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useEffect, useRef } from "react";
 import { Group, MathUtils, Mesh } from "three";
-import { useScreenWidth } from "./useScreenWidth";
+import { useScreenWidth } from "./useBreakpoints";
 import { useLenis } from "lenis/react";
 import { useProgress } from "@react-three/drei";
 
@@ -14,7 +14,7 @@ export const useModelAnimation = () => {
   const modelRef = useRef<Mesh>(null);
   const bladeRef = useRef<Mesh>(null);
   const handleRef = useRef<Mesh>(null);
-  const { isLargeOrMore } = useScreenWidth();
+  const { lg } = useScreenWidth();
   const lenis = useLenis();
   const { progress } = useProgress();
 
@@ -94,7 +94,7 @@ export const useModelAnimation = () => {
       1
     );
 
-    isLargeOrMore &&
+    lg &&
       masterTl.to(
         modelRef.current.scale,
         {
@@ -110,9 +110,9 @@ export const useModelAnimation = () => {
       y: 1,
       immediateRender: false,
       scrollTrigger: {
-        pin: isLargeOrMore ? "#contacts" : ".model-pin",
+        pin: lg ? "#contacts" : ".model-pin",
         start: "bottom bottom",
-        end: isLargeOrMore ? "+=2000" : "+=1200",
+        end: lg ? "+=2000" : "+=1200",
         scrub: true,
         pinSpacing: true,
       },

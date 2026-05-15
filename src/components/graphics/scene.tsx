@@ -17,19 +17,19 @@ import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useScreenWidth } from "~/hooks/useScreenWidth";
+import { useScreenWidth } from "~/hooks/useBreakpoints";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Scene = () => {
-  const { isXLargeOrMore } = useScreenWidth();
+  const { lg } = useScreenWidth();
 
   return (
     <Canvas>
       <ambientLight intensity={1.5} />
       <directionalLight position={[5, 5, 5]} intensity={1} />
 
-      <Bounds fit={!isXLargeOrMore} clip={!isXLargeOrMore} observe={!isXLargeOrMore} margin={1}>
+      <Bounds fit={!lg} clip={!lg} observe={!lg} margin={1}>
         <Float floatIntensity={0.2} speed={0.5}>
           <Center>
             <Model />
