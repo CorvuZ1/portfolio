@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { isClientSide } from "~/utils/isClientSide";
 
 type ScreenType = {
   xs: boolean;
@@ -6,17 +7,17 @@ type ScreenType = {
   md: boolean;
   lg: boolean;
   xl: boolean;
-  "2xl": boolean;
+  xxl: boolean;
 };
 
-export const useScreenWidth = (): ScreenType => {
+export const useBreakpoints = (): ScreenType => {
   const getScreens = (): ScreenType => ({
-    xs: window.matchMedia("(min-width: 30rem)").matches,
-    sm: window.matchMedia("(min-width: 40rem)").matches,
-    md: window.matchMedia("(min-width: 48rem)").matches,
-    lg: window.matchMedia("(min-width: 64rem)").matches,
-    xl: window.matchMedia("(min-width: 80rem)").matches,
-    "2xl": window.matchMedia("(min-width: 96rem)").matches,
+    xs: isClientSide ? window.matchMedia("(min-width: 30rem)").matches : false,
+    sm: isClientSide ? window.matchMedia("(min-width: 40rem)").matches : false,
+    md: isClientSide ? window.matchMedia("(min-width: 48rem)").matches : false,
+    lg: isClientSide ? window.matchMedia("(min-width: 64rem)").matches : false,
+    xl: isClientSide ? window.matchMedia("(min-width: 80rem)").matches : false,
+    xxl: isClientSide ? window.matchMedia("(min-width: 96rem)").matches : false,
   });
 
   const [screen, setScreen] = useState<ScreenType>(getScreens);

@@ -17,12 +17,12 @@ import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useScreenWidth } from "~/hooks/useBreakpoints";
+import { useBreakpoints } from "~/hooks/useBreakpoints";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Scene = () => {
-  const { lg } = useScreenWidth();
+  const { lg } = useBreakpoints();
 
   return (
     <Canvas>

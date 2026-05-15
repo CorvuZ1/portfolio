@@ -1,6 +1,8 @@
 import { contacts } from "~/data/contacts";
 import { Container } from "../ui/container";
 import { AnimationRoot } from "../ui/animation-root";
+import { Icon } from "../ui/icon";
+import { cn } from "~/utils/cn";
 
 export const ContactsSection = () => {
   return (
@@ -29,6 +31,10 @@ export const ContactsSection = () => {
             </p>
           </div>
 
+          {/* <span className="rounded-full border border-white/10 px-4 py-4 text-sm text-slate-300 transition-colors group-hover:border-amber-300/50 group-hover:text-white">
+                <Icon name="download" className="text-white w-5 h-5" />
+              </span> */}
+
           <div className="grid gap-4">
             {contacts.map((contact, index) => (
               <a
@@ -37,33 +43,29 @@ export const ContactsSection = () => {
                 key={index}
                 href={contact.href}
                 target="_blank"
-                className="group flex flex-col items-start gap-4 rounded-[1.75rem] border border-white/10 bg-black/10 px-6 py-5 backdrop-blur-xl transition-colors hover:border-cyan-300/35 hover:bg-white/8 sm:flex-row sm:items-center sm:justify-between"
+                className="group flex items-center justify-between gap-4 rounded-[1.75rem] border border-white/10 bg-black/5 px-6 py-5 backdrop-blur-xl transition-colors hover:border-cyan-300/35 hover:bg-white/5 sm:flex-row sm:items-center sm:justify-between"
               >
                 <span>
                   <span className="block text-xs uppercase tracking-[0.3em] text-slate-500">
                     {contact.label}
                   </span>
-                  <span className="mt-3 block text-xl font-semibold text-white">
-                    {contact.value}
-                  </span>
+                  <span className="mt-3 block text-lg text-white">{contact.value}</span>
                 </span>
-                <span className="rounded-full border border-white/10 px-4 py-2 text-sm text-slate-300 transition-colors group-hover:border-cyan-300/35 group-hover:text-white">
-                  Lorem
+
+                <span
+                  className={cn(
+                    "rounded-full border border-white/10 px-4 py-2 text-sm text-slate-300 transition-colors group-hover:border-cyan-300/35 group-hover:text-white",
+                    contact.isFile && "p-4"
+                  )}
+                >
+                  {contact.isFile ? (
+                    <Icon name="download" className="text-white w-5 h-5" />
+                  ) : (
+                    "Lorem"
+                  )}
                 </span>
               </a>
             ))}
-
-            <div
-              data-animation-item
-              data-animation-item-block
-              className="rounded-[1.75rem] border border-amber-300/20 bg-[linear-gradient(135deg,_rgba(247,146,30,0.18),_rgba(10,15,24,0.55))] p-6 backdrop-blur-xl"
-            >
-              <p className="text-xs uppercase tracking-[0.3em] text-amber-100/80">Amet elit</p>
-              <p className="mt-4 max-w-xl text-base leading-7 text-slate-100">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-              </p>
-            </div>
           </div>
         </Container>
       </AnimationRoot>

@@ -10,7 +10,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Bloom, EffectComposer, SelectiveBloom } from "@react-three/postprocessing";
 import { useModelAnimation } from "~/hooks/useModelAnimation";
-import { useScreenWidth } from "~/hooks/useBreakpoints";
+import { useBreakpoints } from "~/hooks/useBreakpoints";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

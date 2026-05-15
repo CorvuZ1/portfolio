@@ -1,1 +1,1 @@
-export const ICONS = ["cursor-follower"] as const;
+export const ICONS = ["cursor-follower", "download"] as const;

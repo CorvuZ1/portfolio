@@ -65,7 +65,7 @@ export const ExperienceSection = () => {
                         <h3 className="text-3xl font-semibold text-white font-science-gothic">
                           {workplace.company}
                         </h3>
-                        <p className="mt-3 text-sm font-medium uppercase tracking-[0.24em] text-cyan-200">
+                        <p className="mt-3 text-sm font-medium uppercase tracking-[0.24em] text-cyan-200 font-science-gothic">
                           {workplace.role}
                         </p>
                       </div>

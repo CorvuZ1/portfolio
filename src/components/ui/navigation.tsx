@@ -6,12 +6,14 @@ import { Header } from "~/components/ui/header";
 import { MobileNavigation } from "~/components/ui/mobile-navigation";
 import { SideNavigation } from "~/components/ui/side-navigation";
 import { sections } from "~/data/sections";
+import { useBreakpoints } from "~/hooks/useBreakpoints";
 import { cn } from "~/utils/cn";
 
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState<string>("about");
   const [isFloatingNavVisible, setIsFloatingNavVisible] = useState<boolean>(false);
   const router = useRouter();
+  const { xxl } = useBreakpoints();
 
   const updateFloatingVisibility = useEffectEvent(() => {
     const floatingScrollOffset = 96;
@@ -77,10 +79,10 @@ export const Navigation = () => {
 
   return (
     <>
-      <Header aria-hidden={isFloatingNavVisible} />
+      <Header />
 
       <SideNavigation
-        aria-hidden={!isFloatingNavVisible}
+        aria-hidden={!(isFloatingNavVisible && xxl)}
         className={cn(
           isFloatingNavVisible ? "translate-x-0 opacity-100" : "translate-x-6 opacity-0"
         )}
@@ -88,7 +90,7 @@ export const Navigation = () => {
       />
 
       <MobileNavigation
-        aria-hidden={!isFloatingNavVisible}
+        aria-hidden={!(isFloatingNavVisible && !xxl)}
         className={cn(
           isFloatingNavVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
         )}
