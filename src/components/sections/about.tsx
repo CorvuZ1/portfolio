@@ -13,7 +13,7 @@ export const AboutSection = () => {
             <div className="space-y-5">
               <p
                 data-animation-item
-                className="text-sm uppercase tracking-[0.35em] text-cyan-200/75"
+                className="text-sm uppercase tracking-[0.35em] text-cyan-200/75 font-science-gothic"
               >
                 Sit amet consectetur
               </p>

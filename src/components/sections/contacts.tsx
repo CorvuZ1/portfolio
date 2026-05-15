@@ -11,12 +11,15 @@ export const ContactsSection = () => {
       <AnimationRoot>
         <Container className="grid gap-8 lg:items-center lg:grid-cols-[0.95fr_1.05fr]">
           <div className="space-y-5">
-            <p data-animation-item className="text-sm uppercase tracking-[0.34em] text-cyan-200/75">
+            <p
+              data-animation-item
+              className="text-sm uppercase tracking-[0.34em] text-cyan-200/75 font-science-gothic"
+            >
               Dolor sit
             </p>
             <h2
               data-animation-item
-              className="max-w-2xl text-4xl font-semibold text-white sm:text-5xl"
+              className="max-w-2xl text-4xl font-semibold text-white sm:text-5xl font-science-gothic"
             >
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
             </h2>
@@ -34,7 +37,7 @@ export const ContactsSection = () => {
                 key={index}
                 href={contact.href}
                 target="_blank"
-                className="group flex flex-col items-start gap-4 rounded-[1.75rem] border border-white/10 bg-white/6 px-6 py-5 backdrop-blur-xl transition-colors hover:border-cyan-300/35 hover:bg-white/8 sm:flex-row sm:items-center sm:justify-between"
+                className="group flex flex-col items-start gap-4 rounded-[1.75rem] border border-white/10 bg-black/10 px-6 py-5 backdrop-blur-xl transition-colors hover:border-cyan-300/35 hover:bg-white/8 sm:flex-row sm:items-center sm:justify-between"
               >
                 <span>
                   <span className="block text-xs uppercase tracking-[0.3em] text-slate-500">

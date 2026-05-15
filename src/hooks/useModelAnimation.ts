@@ -101,11 +101,10 @@ export const useModelAnimation = () => {
         y: 1,
         immediateRender: false,
         scrollTrigger: {
-          trigger: isLargeOrMore ? "#contacts" : ".model-pin",
+          pin: isLargeOrMore ? "#contacts" : ".model-pin",
           start: "bottom bottom",
-          end: "+=1000",
+          end: "+=1200",
           scrub: true,
-          pin: true,
           pinSpacing: true,
         },
       });

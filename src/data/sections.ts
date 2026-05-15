@@ -5,6 +5,6 @@ export interface SectionItem {
 
 export const sections: SectionItem[] = [
   { id: "about", label: "Lorem ipsum" },
-  { id: "experience", label: "Lorem ipsum" },
-  { id: "contacts", label: "Lorem ipsum" },
+  { id: "experience", label: "Adipisicing elit hic" },
+  { id: "contacts", label: "Dolor sit amet" },
 ];

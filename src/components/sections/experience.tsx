@@ -20,12 +20,15 @@ export const ExperienceSection = () => {
             <div className="mb-16 max-w-3xl space-y-4">
               <p
                 data-animation-item
-                className="text-sm uppercase tracking-[0.34em] text-cyan-200/75"
+                className="text-sm uppercase tracking-[0.34em] text-cyan-200/75 font-science-gothic"
               >
                 Lorem ipsum
               </p>
 
-              <h2 data-animation-item className="text-4xl font-semibold text-white sm:text-5xl">
+              <h2
+                data-animation-item
+                className="text-4xl font-semibold text-white sm:text-5xl font-science-gothic"
+              >
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
               </h2>
               <p data-animation-item className="text-lg leading-8 text-slate-300">
@@ -59,7 +62,9 @@ export const ExperienceSection = () => {
                         {workplace.period}
                       </p>
                       <div>
-                        <h3 className="text-3xl font-semibold text-white">{workplace.company}</h3>
+                        <h3 className="text-3xl font-semibold text-white font-science-gothic">
+                          {workplace.company}
+                        </h3>
                         <p className="mt-3 text-sm font-medium uppercase tracking-[0.24em] text-cyan-200">
                           {workplace.role}
                         </p>
