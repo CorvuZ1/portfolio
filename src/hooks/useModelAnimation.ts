@@ -5,6 +5,8 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useEffect, useRef } from "react";
 import { Group, MathUtils, Mesh } from "three";
 import { useScreenWidth } from "./useScreenWidth";
+import { useLenis } from "lenis/react";
+import { useProgress } from "@react-three/drei";
 
 gsap.registerPlugin(useGSAP, ScrollToPlugin);
 
@@ -13,6 +15,14 @@ export const useModelAnimation = () => {
   const bladeRef = useRef<Mesh>(null);
   const handleRef = useRef<Mesh>(null);
   const { isLargeOrMore } = useScreenWidth();
+  const lenis = useLenis();
+  const { progress } = useProgress();
+
+  useEffect(() => {
+    if (!lenis || progress < 100) return;
+
+    lenis.resize();
+  }, [lenis, progress]);
 
   useGSAP(() => {
     if (!bladeRef.current || !handleRef.current || !modelRef.current) return;
