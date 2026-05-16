@@ -38,9 +38,7 @@ export const ExperienceCard = (props: ExperienceCardProps) => {
 
           <div className="flex flex-wrap gap-2">
             {stack.map((item) => (
-              <Tag key={item} variant="stack">
-                {item}
-              </Tag>
+              <Tag key={item}>{item}</Tag>
             ))}
           </div>
         </div>
