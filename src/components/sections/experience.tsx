@@ -4,6 +4,7 @@ import { experience } from "~/data/experience";
 import { Container } from "../ui/container";
 import { AnimationRoot } from "../ui/animation-root";
 import { useExperienceAnimation } from "~/hooks/useExperienceAnimation";
+import { ExperienceCard } from "../ui/experience-card";
 
 export const ExperienceSection = () => {
   const { sectionRef, containerRef, cardsWrapperRef } = useExperienceAnimation();
@@ -47,50 +48,15 @@ export const ExperienceSection = () => {
               }}
             >
               {experience.map((workplace, index) => (
-                <article
+                <ExperienceCard
+                  company={workplace.company}
+                  period={workplace.period}
+                  role={workplace.role}
+                  stack={workplace.stack}
+                  summary={workplace.summary}
                   key={workplace.company}
-                  className="relative min-h-[400px] flex-shrink-0 overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(160deg,_rgba(255,255,255,0.09),_rgba(255,255,255,0.03))] p-8 shadow-[0_24px_80px_rgba(0,0,0,0.32)] backdrop-blur-xl"
-                  style={{
-                    width: `${100 / experience.length}%`,
-                  }}
-                >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(125,211,252,0.18),_transparent_36%),radial-gradient(circle_at_bottom_right,_rgba(251,191,36,0.16),_transparent_34%)] opacity-80" />
-
-                  <div className="relative grid h-full gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-                    <div className="space-y-4">
-                      <p className="text-xs uppercase tracking-[0.3em] text-amber-100/80">
-                        {workplace.period}
-                      </p>
-                      <div>
-                        <h3 className="text-3xl font-semibold text-white font-science-gothic">
-                          {workplace.company}
-                        </h3>
-                        <p className="mt-3 text-sm font-medium uppercase tracking-[0.24em] text-cyan-200 font-science-gothic">
-                          {workplace.role}
-                        </p>
-                      </div>
-                      <div className="hidden h-px w-full bg-white/10 lg:block" />
-                      <p className="text-sm leading-7 text-slate-400">
-                        Lorem {String(index + 1).padStart(2, "0")}
-                      </p>
-                    </div>
-
-                    <div className="flex h-full flex-col justify-between gap-6">
-                      <p className="text-base leading-8 text-slate-200">{workplace.summary}</p>
-
-                      <div className="flex flex-wrap gap-2">
-                        {workplace.stack.map((item) => (
-                          <span
-                            key={item}
-                            className="rounded-full border border-white/10 bg-slate-950/45 px-3 py-1 text-xs text-slate-200"
-                          >
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </article>
+                  width={100 / experience.length + "%"}
+                />
               ))}
             </div>
           </div>

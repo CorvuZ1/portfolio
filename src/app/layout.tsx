@@ -6,6 +6,12 @@ import { cn } from "~/utils/cn";
 import { Cursor } from "~/components/layout/cursor";
 import { exo2, scienceGothic } from "~/config/fonts";
 import { SceneWrapper } from "~/components/graphics/scene-wrapper";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "LOREM IPSUM!",
+  description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, temporibus.",
+};
 
 export default function RootLayout(props: { children: ReactNode }) {
   const { children } = props;
