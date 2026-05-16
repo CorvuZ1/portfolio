@@ -1,23 +1,13 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-
-import {
-  Bounds,
-  Center,
-  Float,
-  OrbitControls,
-  PerspectiveCamera,
-  useProgress,
-} from "@react-three/drei";
-import { Canvas, useThree } from "@react-three/fiber";
-import { Model } from "./model";
-import { Bloom, EffectComposer } from "@react-three/postprocessing";
-
 import gsap from "gsap";
+import { Bounds, Center, Float, useGLTF } from "@react-three/drei";
+import { Model } from "./model";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useBreakpoints } from "~/hooks/useBreakpoints";
+
+useGLTF.preload("/LightSaber.glb");
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -25,7 +15,7 @@ const Scene = () => {
   const { lg } = useBreakpoints();
 
   return (
-    <Canvas>
+    <>
       <ambientLight intensity={1.5} />
       <directionalLight position={[5, 5, 5]} intensity={1} />
 
@@ -36,7 +26,7 @@ const Scene = () => {
           </Center>
         </Float>
       </Bounds>
-    </Canvas>
+    </>
   );
 };
 

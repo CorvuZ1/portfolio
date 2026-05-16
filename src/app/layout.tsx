@@ -1,10 +1,11 @@
-import ReactLenis from "lenis/react";
 import "./globals.css";
+import ReactLenis from "lenis/react";
 import { ReactNode } from "react";
 import { Navigation } from "~/components/ui/navigation";
 import { cn } from "~/utils/cn";
 import { Cursor } from "~/components/layout/cursor";
 import { exo2, scienceGothic } from "~/config/fonts";
+import { SceneWrapper } from "~/components/graphics/scene-wrapper";
 
 export default function RootLayout(props: { children: ReactNode }) {
   const { children } = props;
@@ -27,6 +28,7 @@ export default function RootLayout(props: { children: ReactNode }) {
       >
         <body className={cn("min-h-screen flex flex-col overflow-x-hidden", dotsBackgroundStyles)}>
           <Navigation />
+          <SceneWrapper />
           <main>{children}</main>
         </body>
       </html>

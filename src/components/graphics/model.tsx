@@ -1,20 +1,17 @@
 "use client";
 
-import { RefObject, useEffect, useRef } from "react";
-import { Html, useBounds, useGLTF } from "@react-three/drei";
-import { Mesh, MeshStandardMaterial, MeshLambertMaterial, Plane, Vector3 } from "three";
-import { ThreeElements, useThree } from "@react-three/fiber";
+import { RefObject } from "react";
+import { useGLTF } from "@react-three/drei";
+import { Mesh } from "three";
+import { ThreeElements } from "@react-three/fiber";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Bloom, EffectComposer, SelectiveBloom } from "@react-three/postprocessing";
+import { EffectComposer, SelectiveBloom } from "@react-three/postprocessing";
 import { useModelAnimation } from "~/hooks/useModelAnimation";
-import { useBreakpoints } from "~/hooks/useBreakpoints";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-useGLTF.preload("/LightSaber.glb");
 
 type GroupElementProps = ThreeElements["group"];
 export interface ModelProps extends GroupElementProps {}
