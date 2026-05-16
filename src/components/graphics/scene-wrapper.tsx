@@ -12,7 +12,7 @@ const DynamicScene = dynamic(() => import("~/components/graphics/scene"), {
 export const SceneWrapper = () => {
   return (
     <div className="fixed -z-1 left-0 top-0 w-full h-full pointer-events-none **:pointer-events-none!">
-      <Canvas>
+      <Canvas dpr={[1, 1.5]} gl={{ antialias: false }}>
         <Suspense fallback={null}>
           <DynamicScene />
         </Suspense>

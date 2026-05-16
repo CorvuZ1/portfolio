@@ -29,7 +29,7 @@ export const Model = (props: ModelProps) => {
       ref={modelRef}
       dispose={null}
     >
-      <mesh ref={bladeRef} castShadow receiveShadow geometry={(nodes.blade as Mesh).geometry}>
+      <mesh ref={bladeRef} geometry={(nodes.blade as Mesh).geometry}>
         <meshStandardMaterial
           attach="material"
           emissiveIntensity={4}
@@ -40,12 +40,7 @@ export const Model = (props: ModelProps) => {
       <mesh geometry={(nodes.blade as Mesh).geometry} visible={false} />
 
       <group ref={handleRef} rotation={[0, -9, 0]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={(nodes.handle as Mesh).geometry}
-          material={materials["handle-material"]}
-        />
+        <mesh geometry={(nodes.handle as Mesh).geometry} material={materials["handle-material"]} />
       </group>
       <EffectComposer>
         <SelectiveBloom
