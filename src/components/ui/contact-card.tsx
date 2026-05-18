@@ -14,16 +14,15 @@ export const ContactCard = (props: ContactCardProps) => {
       data-animation-item
       data-animation-item-block
       href={href}
-      target="_blank"
+      download={isFile}
+      target={!isFile ? "_blank" : undefined}
       className={cn(
-        "group flex items-center justify-between gap-4 rounded-[1.75rem] border border-white/10 bg-black/5 px-6 py-5 backdrop-blur-xl transition-colors hover:border-cyan-300/35 hover:bg-white/5 sm:flex-row sm:items-center sm:justify-between",
+        "group flex items-center justify-between gap-4 rounded-[1.75rem] border border-white/10 bg-black/5 px-6 py-5 backdrop-blur-2xl transition-colors hover:border-cyan-300/35 hover:bg-white/5 sm:flex-row sm:items-center sm:justify-between",
         className
       )}
     >
       <span>
-        <span className="block text-xs uppercase tracking-[0.3em] text-slate-500">
-          {label}
-        </span>
+        <span className="block text-xs uppercase tracking-[0.3em] text-slate-400">{label}</span>
         <span className="mt-3 block text-lg text-white">{value}</span>
       </span>
 
