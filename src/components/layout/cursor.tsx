@@ -11,6 +11,31 @@ gsap.registerPlugin(useGSAP);
 export const Cursor = () => {
   const cursorFollower = useRef<SVGSVGElement>(null);
   const [isMouseMoved, setIsMouseMoved] = useState(false);
+  const rotationTween = useRef<gsap.core.Tween>(null);
+  const prevHoverState = useRef(false);
+
+  const checkInteractive = (element: HTMLElement) => {
+    return (
+      element.tagName === "A" ||
+      element.tagName === "BUTTON" ||
+      element.closest("a") !== null ||
+      element.closest("button") !== null ||
+      element.onclick !== null
+    );
+  };
+
+  const updateRotation = (duration: number = 3) => {
+    if (rotationTween.current) {
+      rotationTween.current.kill();
+    }
+
+    rotationTween.current = gsap.to(cursorFollower.current, {
+      rotation: "+=360",
+      duration,
+      ease: "none",
+      repeat: -1,
+    });
+  };
 
   useGSAP(
     () => {
@@ -31,19 +56,24 @@ export const Cursor = () => {
         opacity: 0.1,
       });
 
-      gsap.to(cursorFollower.current, {
-        rotation: 360,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "linear",
-        scale: 1.2,
-      });
+      updateRotation();
 
       window.addEventListener("pointermove", (e) => {
         if (e.pointerType !== "mouse") return;
 
         if (!isMouseMoved) setIsMouseMoved(true);
+
+        const isInteractive = checkInteractive(e.target as HTMLElement);
+
+        if (isInteractive !== prevHoverState.current) {
+          prevHoverState.current = isInteractive;
+
+          if (isInteractive) {
+            updateRotation(1);
+          } else {
+            updateRotation();
+          }
+        }
 
         xFollowerTo(e.clientX);
         yFollowerTo(e.clientY);

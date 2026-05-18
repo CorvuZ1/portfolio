@@ -8,7 +8,7 @@ export interface ExperienceCardProps extends ExperienceItem {
 }
 
 export const ExperienceCard = (props: ExperienceCardProps) => {
-  const { period, company, role, summary, stack, width, className } = props;
+  const { period, company, role, summary, stack, width, className, href } = props;
 
   return (
     <article
@@ -24,7 +24,19 @@ export const ExperienceCard = (props: ExperienceCardProps) => {
         <div className="space-y-4">
           <p className="text-xs uppercase tracking-[0.3em] text-amber-100/80">{period}</p>
           <div>
-            <h3 className="text-3xl font-semibold text-white font-science-gothic">{company}</h3>
+            <h3 className="text-3xl font-semibold text-white font-science-gothic">
+              {href ? (
+                <a
+                  href={href}
+                  target="_blank"
+                  className="underline underline-offset-4 decoration-2"
+                >
+                  {company}
+                </a>
+              ) : (
+                company
+              )}
+            </h3>
             <p className="mt-3 text-sm font-medium uppercase tracking-[0.24em] text-cyan-200 font-science-gothic">
               {role}
             </p>

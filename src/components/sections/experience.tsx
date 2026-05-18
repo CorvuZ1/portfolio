@@ -49,6 +49,7 @@ export const ExperienceSection = () => {
             >
               {experience.map((workplace, index) => (
                 <ExperienceCard
+                  href={workplace.href}
                   company={workplace.company}
                   period={workplace.period}
                   role={workplace.role}
