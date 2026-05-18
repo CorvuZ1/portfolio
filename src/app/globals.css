@@ -20,10 +20,10 @@ body {
   --gray: #2E3138;
   --white: #F5F7FA;
   --silver: #BFC5CC;
-  --blue: #2E7BFF;
+  --turquoise: #7dd3fc;
   --red: #E02828;
-  --gold: #F4C542;
-  --sand: #C9A46A; */
+  --yellow: #F4C542;
+  --biege: #C9A46A; */
 
   --color-app-background: var(--_dark-blue);
   --color-selection-background: --alpha(var(--_light-blue) / 75%);
@@ -41,5 +41,5 @@ body {
 }
 
 @utility text-contrast-shadow {
-  text-shadow: 2px 2px black;
+  text-shadow: 2px 2px 2px black;
 }
