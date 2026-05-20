@@ -12,18 +12,8 @@ body {
 }
 
 @theme {
-  --_yellow: #ffe81f;
   --_dark-blue: #0c111d;
   --_light-blue: #7dd3fc;
-
-  /* --black: #0B0D12;
-  --gray: #2E3138;
-  --white: #F5F7FA;
-  --silver: #BFC5CC;
-  --turquoise: #7dd3fc;
-  --red: #E02828;
-  --yellow: #F4C542;
-  --biege: #C9A46A; */
 
   --color-app-background: var(--_dark-blue);
   --color-selection-background: --alpha(var(--_light-blue) / 75%);
@@ -42,4 +32,14 @@ body {
 
 @utility text-contrast-shadow {
   text-shadow: 2px 2px 2px black;
+}
+
+@utility card-highlight {
+  background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+}
+
+@utility card-gradient {
+  background-image:
+    radial-gradient(circle at top left, rgba(125, 211, 252, 0.18), transparent 36%),
+    radial-gradient(circle at bottom right, rgba(251, 191, 36, 0.16), transparent 34%);
 }

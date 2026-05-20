@@ -13,14 +13,14 @@ export const ExperienceCard = (props: ExperienceCardProps) => {
   return (
     <article
       className={cn(
-        "relative min-h-[400px] flex-shrink-0 overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(160deg,_rgba(255,255,255,0.09),_rgba(255,255,255,0.03))] p-8 shadow-[0_24px_80px_rgba(0,0,0,0.32)] backdrop-blur-xl",
+        "relative min-h-75 lg:min-h-100 card-highlight shrink-0 overflow-hidden rounded-4xl border border-white/10  p-6 lg:p-8 shadow-[0_24px_80px_rgba(0,0,0,0.32)] backdrop-blur-xl",
         className
       )}
       style={{ width }}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(125,211,252,0.18),_transparent_36%),radial-gradient(circle_at_bottom_right,_rgba(251,191,36,0.16),_transparent_34%)] opacity-80" />
+      <div className="absolute inset-0 card-gradient opacity-80" />
 
-      <div className="relative grid h-full gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <div className="relative h-full flex flex-col lg:gap-8 lg:grid lg:grid-cols-2 lg:items-start">
         <div className="space-y-4">
           <p className="text-xs uppercase tracking-[0.3em] text-amber-100/80">{period}</p>
           <div>
@@ -42,13 +42,17 @@ export const ExperienceCard = (props: ExperienceCardProps) => {
             </p>
           </div>
           <div className="hidden h-px w-full bg-white/10 lg:block" />
-          <p className="text-sm leading-7 text-slate-400"></p>
         </div>
 
-        <div className="flex h-full flex-col justify-between gap-6">
-          <p className="text-base leading-8 text-slate-200">{summary}</p>
+        <div className="flex flex-col justify-between gap-6 h-full">
+          <p className="text-base leading-8 text-slate-200">
+            {summary}{" "}
+            <a href="/" download className="text-cyan-200">
+              Lorem
+            </a>
+          </p>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mt-auto">
             {stack.map((item) => (
               <Tag key={item}>{item}</Tag>
             ))}
