@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useEffect, useEffectEvent, useState } from "react";
 import { Header } from "~/components/ui/header";
 import { MobileNavigation } from "~/components/ui/mobile-navigation";
@@ -12,7 +11,6 @@ import { cn } from "~/utils/cn";
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState<string>("about");
   const [isFloatingNavVisible, setIsFloatingNavVisible] = useState<boolean>(false);
-  const router = useRouter();
   const { xxl } = useBreakpoints();
 
   const updateFloatingVisibility = useEffectEvent(() => {
@@ -71,10 +69,6 @@ export const Navigation = () => {
     sectionElements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    router.replace("/");
   }, []);
 
   return (

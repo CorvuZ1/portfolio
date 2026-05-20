@@ -1,11 +1,10 @@
 "use client";
 
+import gsap from "gsap";
 import { RefObject } from "react";
 import { useGLTF } from "@react-three/drei";
 import { Mesh } from "three";
 import { ThreeElements } from "@react-three/fiber";
-
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { EffectComposer, SelectiveBloom } from "@react-three/postprocessing";

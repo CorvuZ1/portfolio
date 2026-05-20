@@ -1,5 +1,5 @@
-import { AnimationRoot } from "../ui/animation-root";
-import { Container } from "../ui/container";
+import { AnimationRoot } from "~/components/ui/animation-root";
+import { Container } from "~/components/ui/container";
 
 export const AboutSection = () => {
   return (

@@ -1,9 +1,7 @@
 import { contacts } from "~/data/contacts";
-import { Container } from "../ui/container";
-import { AnimationRoot } from "../ui/animation-root";
-import { Icon } from "../ui/icon";
-import { cn } from "~/utils/cn";
-import { ContactCard } from "../ui/contact-card";
+import { Container } from "~/components/ui/container";
+import { AnimationRoot } from "~/components/ui/animation-root";
+import { ContactCard } from "~/components/ui/contact-card";
 
 export const ContactsSection = () => {
   return (

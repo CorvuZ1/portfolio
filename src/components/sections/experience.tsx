@@ -1,10 +1,10 @@
 "use client";
 
 import { experience } from "~/data/experience";
-import { Container } from "../ui/container";
-import { AnimationRoot } from "../ui/animation-root";
+import { Container } from "~/components/ui/container";
+import { AnimationRoot } from "~/components/ui/animation-root";
 import { useExperienceAnimation } from "~/hooks/useExperienceAnimation";
-import { ExperienceCard } from "../ui/experience-card";
+import { ExperienceCard } from "~/components/ui/experience-card";
 
 export const ExperienceSection = () => {
   const { sectionRef, containerRef, cardsWrapperRef } = useExperienceAnimation();

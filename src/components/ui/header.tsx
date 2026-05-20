@@ -18,14 +18,16 @@ export const Header = (props: HeaderProps) => {
       {...rest}
     >
       <Container className="flex flex-col gap-3 rounded-bl-[1.75rem] rounded-br-[1.75rem] md:rounded-[1.75rem] border border-white/10 bg-slate-950/55 py-3 shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-xl xs:flex-row xs:items-center xs:justify-between">
-        <Link href="/" className="text-left">
+        <div className="text-left">
           <span className="block text-[0.68rem] uppercase tracking-[0.35em] text-cyan-200/70">
             Lorem ipsum
           </span>
-          <span className="block text-sm font-semibold text-white">dolor.sit</span>
-        </Link>
+          <span className="block text-sm font-semibold text-white">
+            dolor.sit
+          </span>
+        </div>
 
-        <div className="hidden flex-wrap items-center gap-2 text-sm text-slate-200 xs:flex md:justify-end">
+        <div className="hidden flex-wrap items-center gap-2 text-sm text-slate-200 sm:flex md:justify-end">
           {sections.map((section, index) => {
             const isFirst = index === 0;
 
